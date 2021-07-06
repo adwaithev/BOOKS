@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body background="images/books18.jpg">
+
+    <div class="box">
+        <input type="text" id="b_name" placeholder="    book name"><br>
+        <input type="text" id="authr" placeholder="    author"><br>
+        <input type="text" id="pric" placeholder="    price"><br>
+        <input type="text" id="copies" placeholder="    no of copies"><br>
+        <button class="btn btn-danger" onclick="createBook()">Create Book</button>
+    </div>
+</body>
+<script>
+    function createBook() {
+        let book_name = b_name.value;
+        let author = authr.value;
+        let price = pric.value;
+        let no_of_copies = copies.value;
+
+        let book = {
+            book_name: book_name,
+            author: author,
+            price: price,
+            no_of_copies: no_of_copies,
+        }
+
+        localStorage.setItem(book.book_name, JSON.stringify(book));
+        alert("book created")
+
+    }
+</script>
+
+</html>
